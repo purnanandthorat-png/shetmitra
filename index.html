@@ -5,6 +5,37 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1f6a3d">
 <title>शेतमित्र</title>
+  <link rel="manifest" href="./manifest.json">
+
+<meta name="theme-color" content="#1f6a3d">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes
+
+<meta
+
+name="apple-mobile-web-app-status-bar-style"
+
+content="default"
+
+>
+
+<meta
+
+name="apple-mobile-web-app-title"
+
+content="शेतमित्र"
+
+>
+
+<link
+
+rel="apple-touch-icon"
+
+href="./icon-192.png"
+
+>
 <style>
 :root{--g:#1f6a3d;--g2:#31804b;--bg:#f5f2e8;--card:#fff;--ink:#173720;--muted:#667269;--line:#e5dfd0;--warn:#fff0c9;--danger:#a33}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}.app{max-width:520px;min-height:100vh;margin:auto;padding-bottom:86px}.header{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;padding:28px 18px 24px;border-radius:0 0 30px 30px;box-shadow:0 5px 16px #153b2228}.headrow{display:flex;align-items:center;gap:12px}.headrow h1{font-size:26px;margin:0}.tag{font-size:13px;margin:5px 0 0;color:#ecfff1}.back{display:none;width:40px;height:40px;border:0;border-radius:50%;background:#ffffff20;color:white;font-size:22px}.main{padding:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:17px;margin-bottom:13px;box-shadow:0 2px 8px #00000009}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}.big{font-size:25px;font-weight:850}.muted{color:var(--muted);font-size:13px}.title{font-size:19px;font-weight:850;margin:22px 0 11px}.btn{width:100%;border:0;border-radius:15px;padding:14px 12px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--g);color:#fff}.secondary{background:#eef5e9;color:var(--g);border:1px solid #d6e5d1}.warning{background:var(--warn);color:#765a11}.danger{background:#fff0f0;color:var(--danger);border:1px solid #f1cece}.row{display:flex;gap:9px}.row>*{flex:1}.field{margin-bottom:15px}.field label{display:block;font-weight:800;font-size:14px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #dad4c6;border-radius:14px;padding:13px;background:#fff;font:inherit}.field textarea{min-height:80px;resize:vertical}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid #cddacb;background:#f5f8f2;color:#315b3b;border-radius:999px;padding:9px 12px;font-weight:750}.chip.active{background:var(--g);color:#fff}.farmTop,.taskTop{display:flex;justify-content:space-between;gap:10px}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#edf5e9;color:#28643e;font-size:12px;font-weight:800}.stage{display:flex;gap:12px;position:relative;padding-bottom:17px}.dot{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#efeee8;flex:0 0 auto}.dot.done{background:var(--g);color:#fff}.dot.current{background:#ddefd8;outline:4px solid #eef7eb}.line{position:absolute;left:17px;top:36px;width:2px;height:18px;background:#dce5d8}.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);z-index:10}.navin{max-width:520px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);padding:7px}.nav button{border:0;background:none;color:#647069;padding:7px;font-weight:740}.nav button.active{color:var(--g)}.empty{text-align:center;color:var(--muted);padding:25px}.notice{background:#edf5e9;border:1px solid #d8e7d3;border-radius:16px;padding:13px;font-size:13px}.status-done{color:#237044}.status-later{color:#876612}.hide{display:none!important}.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:#173720;color:white;border-radius:14px;padding:12px 16px;z-index:30;max-width:88%;text-align:center}.small{font-size:12px}.progress{height:9px;background:#e9ede5;border-radius:9px;overflow:hidden}.progress>div{height:100%;background:#4b8b55}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar .btn{width:auto;padding:10px 12px}.spacer{height:4px}
 </style>
@@ -51,5 +82,22 @@ async function backupData(){const data={version:1,exportedAt:new Date().toISOStr
 async function restoreData(e){try{const data=JSON.parse(await e.target.files[0].text());if(!data.farms||!data.crops||!data.tasks)throw Error();for(const x of data.farms)await put('farms',x);for(const x of data.crops)await put('crops',x);for(const x of data.tasks)await put('tasks',x);toast('✅ डेटा रिस्टोअर झाला');showHome()}catch{alert('ही शेतमित्रची योग्य backup file नाही.')}e.target.value=''}
 openDB().then(showHome).catch(()=>{$('view').innerHTML='<div class="card">IndexedDB सुरू करता आली नाही. कृपया normal browser mode वापरा.</div>'});
 </script>
+  <script>
+
+if ("serviceWorker" in navigator) {
+
+window.addEventListener(
+
+"load",
+
+function () {
+
+navigator.serviceWorker .register("./service-worker.js") then(function () { }) console.log( ); "शेतमित्र Service Worker सुरू झाला." .catch(function (error) { console.log( "Service Worker Error:", error ); I
+
+);
+
+});
+
+  </script>
 </body>
 </html>
