@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta name="theme-color" content="#246c3e">
+
+  <title>शेतमित्र</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Noto Sans Devanagari", sans-serif;
+      background: #f6f3e9;
+      color: #173720;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #195f37, #2f7f4a);
+      color: white;
+      padding: 34px 20px 30px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .wrap {
+      max-width: 480px;
+      margin: auto;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .header p {
+      margin: 7px 0 0;
+      font-size: 14px;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .hello {
+      margin: 5px 0 18px;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e8e1d1;
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .stat .icon {
+      font-size: 26px;
+    }
+
+    .muted {
+      margin-top: 7px;
+      color: #69736c;
+      font-size: 13px;
+    }
+
+    .number {
+      margin-top: 3px;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .section-title {
+      margin: 24px 0 12px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .task-title {
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .task-meta {
+      margin-top: 6px;
+      color: #687169;
+      font-size: 14px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    button {
+      padding: 13px 10px;
+      border: none;
+      border-radius: 15px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: #246c3e;
+      color: white;
+    }
+
+    .later {
+      background: #fff1cc;
+      color: #725711;
+    }
+
+    .outline {
+      width: 100%;
+      margin-top: 3px;
+      background: white;
+      color: #246c3e;
+      border: 1px solid #b9cbbd;
+    }
+
+    .status-message {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 14px;
+      background: #e8f5e7;
+      color: #23603a;
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 12px 20px 28px;
+      color: #777;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="wrap">
+      <h1>🌾 शेतमित्र</h1>
+
+      <p>
+        लागवडीपासून काढणीपर्यंत तुमचा शेती साथीदार.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap content">
+
+    <div class="hello">
+      नमस्कार शेतकरी मित्र 👋
+    </div>
+
+    <div class="stats">
+
+      <div class="card stat">
+        <div class="icon">🚜</div>
+
+        <div class="muted">
+          माझी शेतं
+        </div>
+
+        <div class="number">
+          0
+        </div>
+      </div>
+
+      <div class="card stat">
+        <div class="icon">📋</div>
+
+        <div class="muted">
+          आजची कामे
+        </div>
+
+        <div class="number" id="taskCount">
+          1
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-title">
+      आज करायची कामे
+    </div>
+
+    <section class="card" id="taskCard">
+
+      <div class="task-title">
+        🌿 पिकाची पाहणी करा
+      </div>
+
+      <div class="task-meta">
+        ऊस · नमुना काम
+      </div>
+
+      <div class="actions" id="taskActions">
+
+        <button
+          class="primary"
+          onclick="finishTask()"
+        >
+          ✅ पूर्ण झाले
+        </button>
+
+        <button
+          class="later"
+          onclick="laterTask()"
+        >
+          ⏰ नंतर करा
+        </button>
+
+      </div>
+
+      <div id="taskMessage"></div>
+
+    </section>
+
+    <button
+      class="outline"
+      onclick="showAddFarmMessage()"
+    >
+      ➕ नवीन शेत जोडा
+    </button>
+
+  </main>
+
+  <footer class="footer">
+    शेतमित्र · सुरुवातीची आवृत्ती
+  </footer>
+
+  <script>
+    function setTaskStatus(message) {
+      document.getElementById("taskActions").style.display = "none";
+
+      document.getElementById("taskMessage").innerHTML =
+        '<div class="status-message">' + message + '</div>';
+
+      document.getElementById("taskCount").textContent = "0";
+    }
+
+    function finishTask() {
+      setTaskStatus("✅ काम पूर्ण म्हणून नोंदवले.");
+    }
+
+    function laterTask() {
+      setTaskStatus("⏰ काम नंतर करण्यासाठी ठेवले.");
+    }
+
+    function showAddFarmMessage() {
+      alert(
+        "पुढील Step मध्ये नवीन शेत जोडण्याचा फॉर्म जोडू."
+      );
+    }
+  </script>
+
+</body>
+</html>
