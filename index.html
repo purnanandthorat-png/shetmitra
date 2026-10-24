@@ -1,280 +1,55 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta name="theme-color" content="#246c3e">
-
-  <title>शेतमित्र</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Noto Sans Devanagari", sans-serif;
-      background: #f6f3e9;
-      color: #173720;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #195f37, #2f7f4a);
-      color: white;
-      padding: 34px 20px 30px;
-      border-radius: 0 0 30px 30px;
-    }
-
-    .wrap {
-      max-width: 480px;
-      margin: auto;
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    .header p {
-      margin: 7px 0 0;
-      font-size: 14px;
-    }
-
-    .content {
-      padding: 20px;
-    }
-
-    .hello {
-      margin: 5px 0 18px;
-      font-size: 21px;
-      font-weight: 800;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #e8e1d1;
-      border-radius: 22px;
-      padding: 18px;
-      margin-bottom: 14px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    .stat .icon {
-      font-size: 26px;
-    }
-
-    .muted {
-      margin-top: 7px;
-      color: #69736c;
-      font-size: 13px;
-    }
-
-    .number {
-      margin-top: 3px;
-      font-size: 26px;
-      font-weight: 800;
-    }
-
-    .section-title {
-      margin: 24px 0 12px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .task-title {
-      font-size: 17px;
-      font-weight: 800;
-    }
-
-    .task-meta {
-      margin-top: 6px;
-      color: #687169;
-      font-size: 14px;
-    }
-
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 9px;
-      margin-top: 15px;
-    }
-
-    button {
-      padding: 13px 10px;
-      border: none;
-      border-radius: 15px;
-      font-size: 14px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .primary {
-      background: #246c3e;
-      color: white;
-    }
-
-    .later {
-      background: #fff1cc;
-      color: #725711;
-    }
-
-    .outline {
-      width: 100%;
-      margin-top: 3px;
-      background: white;
-      color: #246c3e;
-      border: 1px solid #b9cbbd;
-    }
-
-    .status-message {
-      margin-top: 14px;
-      padding: 12px;
-      border-radius: 14px;
-      background: #e8f5e7;
-      color: #23603a;
-      font-weight: 700;
-    }
-
-    .footer {
-      padding: 12px 20px 28px;
-      color: #777;
-      font-size: 12px;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1f6a3d">
+<title>शेतमित्र</title>
+<style>
+:root{--g:#1f6a3d;--g2:#31804b;--bg:#f5f2e8;--card:#fff;--ink:#173720;--muted:#667269;--line:#e5dfd0;--warn:#fff0c9;--danger:#a33}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}.app{max-width:520px;min-height:100vh;margin:auto;padding-bottom:86px}.header{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;padding:28px 18px 24px;border-radius:0 0 30px 30px;box-shadow:0 5px 16px #153b2228}.headrow{display:flex;align-items:center;gap:12px}.headrow h1{font-size:26px;margin:0}.tag{font-size:13px;margin:5px 0 0;color:#ecfff1}.back{display:none;width:40px;height:40px;border:0;border-radius:50%;background:#ffffff20;color:white;font-size:22px}.main{padding:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:17px;margin-bottom:13px;box-shadow:0 2px 8px #00000009}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px}.big{font-size:25px;font-weight:850}.muted{color:var(--muted);font-size:13px}.title{font-size:19px;font-weight:850;margin:22px 0 11px}.btn{width:100%;border:0;border-radius:15px;padding:14px 12px;font-size:15px;font-weight:800;cursor:pointer}.primary{background:var(--g);color:#fff}.secondary{background:#eef5e9;color:var(--g);border:1px solid #d6e5d1}.warning{background:var(--warn);color:#765a11}.danger{background:#fff0f0;color:var(--danger);border:1px solid #f1cece}.row{display:flex;gap:9px}.row>*{flex:1}.field{margin-bottom:15px}.field label{display:block;font-weight:800;font-size:14px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #dad4c6;border-radius:14px;padding:13px;background:#fff;font:inherit}.field textarea{min-height:80px;resize:vertical}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid #cddacb;background:#f5f8f2;color:#315b3b;border-radius:999px;padding:9px 12px;font-weight:750}.chip.active{background:var(--g);color:#fff}.farmTop,.taskTop{display:flex;justify-content:space-between;gap:10px}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#edf5e9;color:#28643e;font-size:12px;font-weight:800}.stage{display:flex;gap:12px;position:relative;padding-bottom:17px}.dot{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#efeee8;flex:0 0 auto}.dot.done{background:var(--g);color:#fff}.dot.current{background:#ddefd8;outline:4px solid #eef7eb}.line{position:absolute;left:17px;top:36px;width:2px;height:18px;background:#dce5d8}.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);z-index:10}.navin{max-width:520px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);padding:7px}.nav button{border:0;background:none;color:#647069;padding:7px;font-weight:740}.nav button.active{color:var(--g)}.empty{text-align:center;color:var(--muted);padding:25px}.notice{background:#edf5e9;border:1px solid #d8e7d3;border-radius:16px;padding:13px;font-size:13px}.status-done{color:#237044}.status-later{color:#876612}.hide{display:none!important}.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:#173720;color:white;border-radius:14px;padding:12px 16px;z-index:30;max-width:88%;text-align:center}.small{font-size:12px}.progress{height:9px;background:#e9ede5;border-radius:9px;overflow:hidden}.progress>div{height:100%;background:#4b8b55}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar .btn{width:auto;padding:10px 12px}.spacer{height:4px}
+</style>
 </head>
-
 <body>
-
-  <header class="header">
-    <div class="wrap">
-      <h1>🌾 शेतमित्र</h1>
-
-      <p>
-        लागवडीपासून काढणीपर्यंत तुमचा शेती साथीदार.
-      </p>
-    </div>
-  </header>
-
-  <main class="wrap content">
-
-    <div class="hello">
-      नमस्कार शेतकरी मित्र 👋
-    </div>
-
-    <div class="stats">
-
-      <div class="card stat">
-        <div class="icon">🚜</div>
-
-        <div class="muted">
-          माझी शेतं
-        </div>
-
-        <div class="number">
-          0
-        </div>
-      </div>
-
-      <div class="card stat">
-        <div class="icon">📋</div>
-
-        <div class="muted">
-          आजची कामे
-        </div>
-
-        <div class="number" id="taskCount">
-          1
-        </div>
-      </div>
-
-    </div>
-
-    <div class="section-title">
-      आज करायची कामे
-    </div>
-
-    <section class="card" id="taskCard">
-
-      <div class="task-title">
-        🌿 पिकाची पाहणी करा
-      </div>
-
-      <div class="task-meta">
-        ऊस · नमुना काम
-      </div>
-
-      <div class="actions" id="taskActions">
-
-        <button
-          class="primary"
-          onclick="finishTask()"
-        >
-          ✅ पूर्ण झाले
-        </button>
-
-        <button
-          class="later"
-          onclick="laterTask()"
-        >
-          ⏰ नंतर करा
-        </button>
-
-      </div>
-
-      <div id="taskMessage"></div>
-
-    </section>
-
-    <button
-      class="outline"
-      onclick="showAddFarmMessage()"
-    >
-      ➕ नवीन शेत जोडा
-    </button>
-
-  </main>
-
-  <footer class="footer">
-    शेतमित्र · सुरुवातीची आवृत्ती
-  </footer>
-
-  <script>
-    function setTaskStatus(message) {
-      document.getElementById("taskActions").style.display = "none";
-
-      document.getElementById("taskMessage").innerHTML =
-        '<div class="status-message">' + message + '</div>';
-
-      document.getElementById("taskCount").textContent = "0";
-    }
-
-    function finishTask() {
-      setTaskStatus("✅ काम पूर्ण म्हणून नोंदवले.");
-    }
-
-    function laterTask() {
-      setTaskStatus("⏰ काम नंतर करण्यासाठी ठेवले.");
-    }
-
-    function showAddFarmMessage() {
-      alert(
-        "पुढील Step मध्ये नवीन शेत जोडण्याचा फॉर्म जोडू."
-      );
-    }
-  </script>
-
+<div class="app">
+<header class="header"><div class="headrow"><button id="backBtn" class="back" onclick="goBack()">←</button><div><h1 id="pageTitle">🌾 शेतमित्र</h1><p id="pageTag" class="tag">लागवडीपासून काढणीपर्यंत तुमचा शेती साथीदार.</p></div></div></header>
+<main id="view" class="main"></main>
+</div>
+<nav class="nav"><div class="navin"><button id="navHome" onclick="showHome()">🏠<br>मुख्यपृष्ठ</button><button id="navFarms" onclick="showFarms()">🚜<br>माझी शेतं</button><button id="navHistory" onclick="showHistory()">📖<br>इतिहास</button></div></nav>
+<div id="toast" class="toast hide"></div>
+<input id="restorePicker" class="hide" type="file" accept="application/json" onchange="restoreData(event)">
+<script>
+const DB_NAME='shetmitra_db', DB_VERSION=1;let db,currentScreen='home',selectedFarmId=null,selectedCropId=null,previousScreen='home';
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function uid(prefix){return prefix+'_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)}
+function openDB(){return new Promise((res,rej)=>{const r=indexedDB.open(DB_NAME,DB_VERSION);r.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains('farms'))d.createObjectStore('farms',{keyPath:'id'});if(!d.objectStoreNames.contains('crops')){const s=d.createObjectStore('crops',{keyPath:'id'});s.createIndex('farmId','farmId')}if(!d.objectStoreNames.contains('tasks')){const s=d.createObjectStore('tasks',{keyPath:'id'});s.createIndex('cropId','cropId');s.createIndex('farmId','farmId')}};r.onsuccess=()=>{db=r.result;res()};r.onerror=()=>rej(r.error)})}
+function store(name,mode='readonly'){return db.transaction(name,mode).objectStore(name)}
+function all(name){return new Promise((res,rej)=>{const r=store(name).getAll();r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function get(name,id){return new Promise((res,rej)=>{const r=store(name).get(id);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function put(name,obj){return new Promise((res,rej)=>{const r=store(name,'readwrite').put(obj);r.onsuccess=()=>res(obj);r.onerror=()=>rej(r.error)})}
+function del(name,id){return new Promise((res,rej)=>{const r=store(name,'readwrite').delete(id);r.onsuccess=res;r.onerror=()=>rej(r.error)})}
+function toast(t){$('toast').textContent=t;$('toast').classList.remove('hide');setTimeout(()=>$('toast').classList.add('hide'),1800)}
+function layout(title,tag,back=false,active=''){previousScreen=currentScreen;$('pageTitle').textContent=title;$('pageTag').textContent=tag;$('backBtn').style.display=back?'block':'none';['Home','Farms','History'].forEach(x=>$('nav'+x).classList.toggle('active',active===x.toLowerCase()))}
+function goBack(){if(currentScreen==='addFarm'||currentScreen==='farmDetail')showFarms();else if(currentScreen==='addCrop')showFarmDetail(selectedFarmId);else if(currentScreen==='journey')showFarmDetail(selectedFarmId);else showHome()}
+async function showHome(){currentScreen='home';layout('🌾 शेतमित्र','लागवडीपासून काढणीपर्यंत तुमचा शेती साथीदार.',false,'home');const farms=await all('farms'),crops=await all('crops'),tasks=await all('tasks'),pending=tasks.filter(t=>t.status==='बाकी'||t.status==='नंतर');$('view').innerHTML=`<div class="big">नमस्कार शेतकरी मित्र 👋</div><div class="spacer"></div><div class="grid2"><div class="card">🚜<div class="muted">माझी शेतं</div><div class="big">${farms.length}</div></div><div class="card">📋<div class="muted">आजची कामे</div><div class="big">${pending.length}</div></div></div><div class="title">आज करायची कामे</div>${pending.length?pending.slice(0,5).map(taskCard).join(''):'<div class="card empty">आज कोणतेही काम बाकी नाही.</div>'}<button class="btn primary" onclick="showAddFarm()">➕ नवीन शेत जोडा</button><div class="title">डेटा सुरक्षित ठेवा</div><div class="card"><div class="row"><button class="btn secondary" onclick="backupData()">⬇️ बॅकअप</button><button class="btn secondary" onclick="restorePicker.click()">⬆️ रिस्टोअर</button></div><p class="muted">डेटा या फोनच्या browser मधील IndexedDB मध्ये राहतो. वेळोवेळी JSON बॅकअप डाउनलोड करा.</p></div>`}
+function taskCard(t){return `<div class="card"><div class="taskTop"><div><b>🌿 ${esc(t.title)}</b><div class="muted">${esc(t.cropName)} · ${esc(t.farmName)}</div></div><span class="pill">${esc(t.status)}</span></div><div class="row" style="margin-top:13px"><button class="btn primary" onclick="setTaskStatus('${t.id}','पूर्ण')">✅ पूर्ण</button><button class="btn warning" onclick="setTaskStatus('${t.id}','नंतर')">⏰ नंतर</button></div></div>`}
+async function showFarms(){currentScreen='farms';layout('माझी शेतं','तुमची शेतं आणि पिके एका ठिकाणी पाहा.',false,'farms');const farms=await all('farms'),crops=await all('crops');$('view').innerHTML=`<div class="farmTop"><div><span class="muted">एकूण शेतं</span><div class="big">${farms.length}</div></div><button class="btn primary" style="width:auto" onclick="showAddFarm()">➕ नवीन शेत</button></div><div class="title">शेतांची यादी</div>${farms.length?farms.map(f=>{const n=crops.filter(c=>c.farmId===f.id).length;return `<div class="card" onclick="showFarmDetail('${f.id}')"><div class="farmTop"><div><b>🚜 ${esc(f.name)}</b><div class="muted">${esc(f.village)} · ${esc(f.number||'क्रमांक नाही')}</div></div><b>${esc(f.area)} ${esc(f.unit)}</b></div><p class="muted">सक्रिय पिके: ${n}</p><button class="btn secondary">शेताची माहिती पहा</button></div>`}).join(''):'<div class="card empty">अजून शेत जोडलेले नाही.</div>'}`}
+function showAddFarm(){currentScreen='addFarm';layout('नवीन शेत जोडा','शेताची मूलभूत माहिती भरा.',true,'farms');$('view').innerHTML=`<form class="card" onsubmit="saveFarm(event)"><div class="field"><label>शेताचे नाव *</label><input id="farmName" required placeholder="उदा. घरचे शेत"></div><div class="field"><label>शेत क्रमांक</label><input id="farmNumber" placeholder="उदा. F001"></div><div class="field"><label>गाव *</label><input id="village" required placeholder="उदा. कराड"></div><div class="row"><div class="field"><label>क्षेत्रफळ *</label><input id="farmArea" required type="number" min="0.01" step="0.01" placeholder="4"></div><div class="field"><label>एकक *</label><select id="farmUnit"><option>एकर</option><option>गुंठा</option><option>हेक्टर</option></select></div></div><button class="btn primary">💾 शेत जतन करा</button></form>`}
+async function saveFarm(e){e.preventDefault();const f={id:uid('farm'),name:$('farmName').value.trim(),number:$('farmNumber').value.trim(),village:$('village').value.trim(),area:$('farmArea').value,unit:$('farmUnit').value,createdAt:new Date().toISOString()};await put('farms',f);toast('✅ शेत जतन झाले');showFarmDetail(f.id)}
+async function showFarmDetail(id){selectedFarmId=id;currentScreen='farmDetail';const f=await get('farms',id);if(!f)return showFarms();layout('शेताची माहिती','शेतातील पिके आणि नोंदी.',true,'farms');const crops=(await all('crops')).filter(c=>c.farmId===id);$('view').innerHTML=`<div class="card"><div class="farmTop"><div><h2 style="margin:0">🚜 ${esc(f.name)}</h2><p class="muted">${esc(f.village)} · ${esc(f.number||'क्रमांक नाही')}</p></div><b>${esc(f.area)} ${esc(f.unit)}</b></div></div><div class="title">या शेतातील पिके</div>${crops.length?crops.map(c=>`<div class="card" onclick="showJourney('${c.id}')"><div class="farmTop"><div><b>🌾 ${esc(c.cropName)}</b><div class="muted">${esc(c.plantingType)} · ${esc(c.variety)}</div></div><span class="pill">${esc(c.stage)}</span></div><button class="btn secondary" style="margin-top:12px">पीक प्रवास पहा</button></div>`).join(''):'<div class="card empty">अजून पीक जोडलेले नाही.</div>'}<button class="btn primary" onclick="showAddCrop('${id}')">🌾 ऊस पीक जोडा</button><button class="btn danger" style="margin-top:10px" onclick="deleteFarm('${id}')">शेत हटवा</button>`}
+function showAddCrop(farmId){selectedFarmId=farmId;currentScreen='addCrop';layout('ऊस पीक जोडा','योग्य पीक प्रवासासाठी माहिती भरा.',true,'farms');$('view').innerHTML=`<form class="card" onsubmit="saveCrop(event)"><div class="field"><label>लागवडीचा प्रकार *</label><select id="plantingType" required><option value="">निवडा</option><option>आडसाली</option><option>पूर्वहंगामी</option><option>सुरू</option><option>खोडवा</option></select></div><div class="field"><label>ऊसाची जात *</label><select id="variety" required><option>Co 86032</option><option>Co 740</option><option>इतर</option></select></div><div class="field"><label>लागवड / खोडवा सुरू तारीख *</label><input id="plantingDate" type="date" required></div><div class="row"><div class="field"><label>पिकाखालील क्षेत्र *</label><input id="cropArea" type="number" min="0.01" step="0.01" required></div><div class="field"><label>एकक</label><select id="cropUnit"><option>एकर</option><option>गुंठा</option><option>हेक्टर</option></select></div></div><div class="notice">पीक अवस्थांची माहिती दाखवली जाईल. खत किंवा कीटकनाशकाचे अचूक प्रमाण या prototype मध्ये दिलेले नाही.</div><br><button class="btn primary">🌱 पीक प्रवास सुरू करा</button></form>`}
+async function saveCrop(e){e.preventDefault();const farm=await get('farms',selectedFarmId);const c={id:uid('crop'),farmId:selectedFarmId,cropName:'ऊस',plantingType:$('plantingType').value,variety:$('variety').value,plantingDate:$('plantingDate').value,area:$('cropArea').value,unit:$('cropUnit').value,stage:'लागवड',status:'सक्रिय',createdAt:new Date().toISOString()};await put('crops',c);await put('tasks',{id:uid('task'),farmId:farm.id,cropId:c.id,farmName:farm.name,cropName:'ऊस',stage:'लागवड',title:'पिकाची पाहणी करा',plannedDate:new Date().toISOString().slice(0,10),completedDate:'',status:'बाकी',notes:'',createdAt:new Date().toISOString()});toast('✅ ऊस पीक जोडले');showJourney(c.id)}
+const stages=['लागवड','उगवण','फुटवे','जोमदार वाढ','पक्वता','काढणी'];
+async function showJourney(cropId){selectedCropId=cropId;currentScreen='journey';const c=await get('crops',cropId),f=await get('farms',c.farmId);selectedFarmId=f.id;layout('ऊसाचा पीक प्रवास',`${f.name} · ${c.plantingType} · ${c.variety}`,true,'farms');const idx=Math.max(0,stages.indexOf(c.stage)),tasks=(await all('tasks')).filter(t=>t.cropId===cropId&&(t.status==='बाकी'||t.status==='नंतर'));$('view').innerHTML=`<div class="card"><span class="muted">सद्य अवस्था</span><h2>🌿 ${esc(c.stage)}</h2><div class="progress"><div style="width:${((idx+1)/stages.length)*100}%"></div></div><p class="muted">लागवड तारीख: ${esc(c.plantingDate)} · क्षेत्र: ${esc(c.area)} ${esc(c.unit)}</p></div><div class="title">पीक जीवनचक्र</div><div class="card">${stages.map((s,i)=>`<div class="stage"><div class="dot ${i<idx?'done':i===idx?'current':''}">${i<idx?'✓':['🌱','🌿','🌱','🎋','🌾','🚜'][i]}</div>${i<stages.length-1?'<div class="line"></div>':''}<div><b>${s}</b><div class="muted">${i<idx?'पूर्ण':i===idx?'सद्य अवस्था':'पुढील अवस्था'}</div></div></div>`).join('')}</div><div class="row"><button class="btn secondary" onclick="moveStage(-1)">← मागील अवस्था</button><button class="btn primary" onclick="moveStage(1)">पुढील अवस्था →</button></div><div class="title">आजचे काम</div>${tasks.length?tasks.map(taskCard).join(''):'<div class="card empty">बाकी काम नाही.</div>'}<button class="btn secondary" onclick="addManualTask()">➕ स्वतःचे काम जोडा</button>`}
+async function moveStage(step){const c=await get('crops',selectedCropId),i=stages.indexOf(c.stage),n=Math.min(stages.length-1,Math.max(0,i+step));c.stage=stages[n];if(c.stage==='काढणी')c.status='काढणी';await put('crops',c);toast('पीक अवस्था अद्ययावत झाली');showJourney(c.id)}
+async function addManualTask(){const title=prompt('कामाचे नाव लिहा');if(!title)return;const c=await get('crops',selectedCropId),f=await get('farms',c.farmId);await put('tasks',{id:uid('task'),farmId:f.id,cropId:c.id,farmName:f.name,cropName:c.cropName,stage:c.stage,title,status:'बाकी',plannedDate:new Date().toISOString().slice(0,10),completedDate:'',notes:'',createdAt:new Date().toISOString()});showJourney(c.id)}
+async function setTaskStatus(id,status){const t=await get('tasks',id);t.status=status;t.completedDate=status==='पूर्ण'?new Date().toISOString().slice(0,10):'';await put('tasks',t);toast(status==='पूर्ण'?'✅ काम पूर्ण नोंदले':'⏰ काम नंतर ठेवले');currentScreen==='journey'?showJourney(t.cropId):showHome()}
+async function showHistory(){currentScreen='history';layout('कामाची नोंद','पूर्ण, नंतर आणि बाकी कामांचा इतिहास.',false,'history');const tasks=(await all('tasks')).sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));$('view').innerHTML=`<div class="toolbar"><button class="btn secondary" onclick="filterHistory('सर्व')">सर्व</button><button class="btn secondary" onclick="filterHistory('पूर्ण')">पूर्ण</button><button class="btn secondary" onclick="filterHistory('नंतर')">नंतर</button><button class="btn secondary" onclick="filterHistory('बाकी')">बाकी</button></div><div id="historyList" style="margin-top:14px">${historyHtml(tasks)}</div>`;window._history=tasks}
+function historyHtml(tasks){return tasks.length?tasks.map(t=>`<div class="card"><div class="taskTop"><div><b>${esc(t.title)}</b><div class="muted">${esc(t.cropName)} · ${esc(t.farmName)} · ${esc(t.stage)}</div></div><span class="pill ${t.status==='पूर्ण'?'status-done':t.status==='नंतर'?'status-later':''}">${esc(t.status)}</span></div><p class="muted">नियोजित: ${esc(t.plannedDate||'-')} ${t.completedDate?'· पूर्ण: '+esc(t.completedDate):''}</p></div>`).join(''):'<div class="card empty">अजून कामाची नोंद नाही.</div>'}
+function filterHistory(s){const a=s==='सर्व'?window._history:window._history.filter(t=>t.status===s);$('historyList').innerHTML=historyHtml(a)}
+async function deleteFarm(id){if(!confirm('हे शेत आणि त्यातील सर्व पिके व कामे हटवायची आहेत?'))return;const crops=(await all('crops')).filter(c=>c.farmId===id),tasks=(await all('tasks')).filter(t=>t.farmId===id);for(const x of tasks)await del('tasks',x.id);for(const x of crops)await del('crops',x.id);await del('farms',id);toast('शेत हटवले');showFarms()}
+async function backupData(){const data={version:1,exportedAt:new Date().toISOString(),farms:await all('farms'),crops:await all('crops'),tasks:await all('tasks')};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='shetmitra-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href);toast('बॅकअप डाउनलोड झाला')}
+async function restoreData(e){try{const data=JSON.parse(await e.target.files[0].text());if(!data.farms||!data.crops||!data.tasks)throw Error();for(const x of data.farms)await put('farms',x);for(const x of data.crops)await put('crops',x);for(const x of data.tasks)await put('tasks',x);toast('✅ डेटा रिस्टोअर झाला');showHome()}catch{alert('ही शेतमित्रची योग्य backup file नाही.')}e.target.value=''}
+openDB().then(showHome).catch(()=>{$('view').innerHTML='<div class="card">IndexedDB सुरू करता आली नाही. कृपया normal browser mode वापरा.</div>'});
+</script>
 </body>
 </html>
